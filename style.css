@@ -6,6 +6,46 @@ body{
     margin: 0;
     padding: 0;
 }
+.hue-bloc{
+    display: flex;
+   
+}
+.hue{
+    margin-left: 100px;
+    width: 694px;
+    height: 202px;
+    border-radius: 30px 0 0 30px;
+    background: linear-gradient(#ff5e4d, #fee347);
+    
+    
+   
+}
+.hue2{
+    font-size: 15px;
+    width: 700px;
+    height: 202px;
+    border-radius: 0 30px 30px 0;
+    background: linear-gradient(#ff5e4d, #fee347);
+    
+   
+}
+#top1{
+    font-family: 'Audiowide', Sans-serif;
+    margin-left: 20px;
+    margin-top: 10px;
+    
+}
+#parag1{
+    margin-left: 20px;
+}
+#top2{
+    margin-left: 10px;
+    font-family: 'Audiowide', Sans-serif;
+    margin-top: 10px;
+}
+#parag2{
+    margin-left: 10px;
+}
 .titre{
     display: flex;
     margin-right: 530px;

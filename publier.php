@@ -3,7 +3,29 @@ session_start();
 include('connexion.php');
   if(!$_SESSION['mdp']){
      header('location: publier.php');
+} 
+if(isset($_POST['ampoules']) && isset($_POST['etages']) && isset($_POST['position']) && isset($_POST['prix']) && isset($_POST['date_chgmt'])){
+
+ $ampoules = $idcom->quote($_POST['ampoules']);
+ $etages = $idcom->quote($_POST['etages']);
+ $position = $idcom->quote($_POST['position']);
+ $prix = $idcom->quote($_POST['prix']);
+ $date_chgmt = $idcom->quote($_POST['date_chgmt']);
+
+ 
+     
+     $requete="INSERT INTO  projet
+     VALUES (DEFAULT, $ampoules, $etages, $position, $prix, $date_chgmt)";
+     
+     $idcom->exec($requete);
+
 }
+else{
+//     echo"ERROR";
+
+}
+
+
 
 ?>   
 <!DOCTYPE html>
@@ -46,27 +68,6 @@ include('connexion.php');
      </table>
      </fieldset>
      </form>
-     <?php
-           if(isset($_POST['ampoules']) && isset($_POST['etages']) && isset($_POST['position']) && isset($_POST['prix']) && isset($_POST['date_chgmt'])){
-
-            $ampoules = $idcom->quote($_POST['ampoules']);
-            $etages = $idcom->quote($_POST['etages']);
-            $position = $idcom->quote($_POST['position']);
-            $prix = $idcom->quote($_POST['prix']);
-            $date_chgmt = $idcom->quote($_POST['date_chgmt']);
-
-            
-                
-                $requete="INSERT INTO  projet
-                VALUES (DEFAULT, $ampoules, $etages, $position, $prix, $date_chgmt)";
-                
-                $idcom->exec($requete);
-           
-          }
-          else{
-          //     echo"ERROR";
-
-          }
-     ?>
+    
 </body>
 </html>
